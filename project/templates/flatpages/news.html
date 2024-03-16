@@ -5,9 +5,8 @@
 {% endblock %}
 {% block content %}
 <div class="header">
-<h1>Главная страница</h1>
+<h2>Главная страница</h2>
 </div>
-<p>Новости</p>
 <div class="content table-responsive table-full-width">
  <table class="table table-hover">
                                     <thead>
@@ -16,11 +15,15 @@
                                     	<th>Кратко</th>
                                     </thead>
      <tbody>
-     {% for el in values %}
-     <tr><th>{{ el }}</th></tr>
+     {% for el in news %}
+     <tr><td><a href="{% url 'news-detail' el.id %}">{{ el.title }}</a></td><td>{{ el.date }}</td><td>{{ el.text|slice:":20" }} ...</td></tr>
      {% endfor %}
      </tbody>
  </table>
+<!--         {% for el in news %}-->
+<!--    <h3>{{ el.title }}</h3><p>{{ el.date }}</p><p>{{ el.text|slice:":20" }}...</p>-->
+<!--     {% endfor %}-->
 </div>
+
 
 {% endblock %}

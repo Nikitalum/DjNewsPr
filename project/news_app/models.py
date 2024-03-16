@@ -6,4 +6,7 @@ class Articles(models.Model):
     date = models.DateTimeField('Дата')
 
     def __str__(self):
-        return self.title
+        return f'{self.title},{self.date},{self.text}'
+    class Meta:
+        verbose_name = 'Новость'
+        verbose_name_plural = 'Новости'
