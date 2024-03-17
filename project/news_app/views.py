@@ -1,6 +1,5 @@
 from django.shortcuts import render, redirect
 from .models import Articles
-from django.http import HttpResponse
 from django.views.generic import DetailView
 
 def index(request):
@@ -21,9 +20,6 @@ def news1(request):
     return render(request, 'flatpages/1.html', {'news1':news})
 
 def about(request):
-    return HttpResponse('<h2>О сайте</h2>')
-
-def details(request):
     return render(request, 'flatpages/about.html')
 
 
