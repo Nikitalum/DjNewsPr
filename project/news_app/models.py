@@ -1,7 +1,7 @@
 from django.db import models
 
 class Articles(models.Model):
-    title = models.CharField('Название', max_length=50)
+    title = models.CharField('Название', max_length=100)
     text = models.TextField('Текст')
     date = models.DateTimeField('Дата')
 
